@@ -4,9 +4,8 @@ import firstHomework.ValidParentheses;
 
 public class Main {
     public static void main(String[] args) {
-        /*ArrayHomeTask.main(args);
+        ArrayHomeTask.main(args);
         ValidParentheses.main(args);
-        */
         MoveZero.main(args);
     }
 }
