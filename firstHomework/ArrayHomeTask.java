@@ -15,9 +15,6 @@ public class ArrayHomeTask {
         revereSort(secondArray);
         System.out.printf(String.valueOf(secondArray));
         System.out.printf("%n");
-
-        LinkedList<Object> emptyArray = new LinkedList<>();
-        System.out.printf(String.valueOf(emptyArray));
     }
 
     public static void revereSort(LinkedList linkedList) {

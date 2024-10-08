@@ -6,22 +6,22 @@ public class ValidParentheses {
     public static void main(String[] args) {
         System.out.println();
         String example1;
-        Input: example1 = "()";
+        example1 = "()";
         Boolean result = ValidParentheses.isValid(example1);
         System.out.println(result);
 
         String example2;
-        Input: example2 = "(]";
+        example2 = "(]";
         result = ValidParentheses.isValid(example2);
         System.out.println(result);
 
         String example3;
-        Input: example3 = "([])";
+        example3 = "([])";
         result = ValidParentheses.isValid(example3);
         System.out.println(result);
 
         String example4;
-        Input: example4 = "()[]{}";
+        example4 = "()[]{}";
         result = ValidParentheses.isValid(example4);
         System.out.println(result);
     }

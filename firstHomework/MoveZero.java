@@ -1,10 +1,10 @@
 package firstHomework;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 
 public class MoveZero {
     public static void main(String[] args) {
+        System.out.println();
         int[] nums = {0, 1, 0, 3, 12};
         ArrayList<Integer> result = moveZeroes(nums);
         System.out.println(result);
