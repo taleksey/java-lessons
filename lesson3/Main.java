@@ -7,7 +7,7 @@ import java.util.Random;
 
 public class Main {
     public static void main(String[] args) {
-        List<Student> students = generateStudents(args);
+        List<Student> students = generateStudents();
         List<Student> filteredStudents = students.stream()
                 .filter(student -> student.address().city().equals("New York"))
                 .filter(student -> student.age() > 15)
@@ -25,7 +25,7 @@ public class Main {
         studentGradeRecord.forEach(System.out::println);
     }
 
-    public static List<Student> generateStudents(String[] args) {
+    public static List<Student> generateStudents() {
         List<Student> students = new ArrayList<>();
 
         String[] address = new String[]{"New York", "Dallas", "Toronto", "Los Angeles", "Tampa"};
