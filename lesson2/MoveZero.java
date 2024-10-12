@@ -1,4 +1,4 @@
-package firstHomework;
+package lesson2;
 
 import java.util.ArrayList;
 
@@ -15,18 +15,18 @@ public class MoveZero {
     }
 
     public static ArrayList<Integer> moveZeroes(int[] nums) {
-        ArrayList<Integer> arr_new = new ArrayList<>();
-        ArrayList<Integer> arr_zero = new ArrayList<>();
+        ArrayList<Integer> valueList = new ArrayList<>();
+        ArrayList<Integer> zeroValueList = new ArrayList<>();
         for (int num : nums) {
             if (num != 0) {
-                arr_new.add(num);
+                valueList.add(num);
             } else {
-                arr_zero.add(num);
+                zeroValueList.add(num);
             }
         }
 
-        arr_new.addAll(arr_zero);
+        valueList.addAll(zeroValueList);
 
-        return arr_new;
+        return valueList;
     }
 }
