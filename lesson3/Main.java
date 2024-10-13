@@ -8,12 +8,9 @@ import java.util.Random;
 public class Main {
     public static void main(String[] args) {
         List<Student> students = generateStudents();
-        List<Student> filteredStudents = students.stream()
+        List<StudentGradeRecord> studentGradeRecord = students.stream()
                 .filter(student -> student.address().city().equals("New York"))
                 .filter(student -> student.age() > 15)
-                .toList();
-
-        List<StudentGradeRecord> studentGradeRecord = filteredStudents.stream()
                 .flatMap(student ->
                         student.listGradle().stream()
                                 .map(grade -> new StudentGradeRecord(student.name(), student.school(), grade.name(), grade.score()))
@@ -22,7 +19,8 @@ public class Main {
                 .limit(3)
                 .toList();
 
-        studentGradeRecord.forEach(System.out::println);
+        studentGradeRecord.stream().map(Service::toString)
+                .forEach(System.out::println);
     }
 
     public static List<Student> generateStudents() {
@@ -39,14 +37,16 @@ public class Main {
             if (i % 2 == 0) {
                 city = address[0];
                 if (i != 8) {
-                    age = 18;
+                    age = 18 + new Random().nextInt();
                 } else {
-                    age = 14;
+                    int min = 1;
+                    int max = 14;
+                    age = new Random().nextInt(max - min + 1) + min;
                 }
             } else {
                 int index = new Random().nextInt(4 - 1 + 1) + 1;
                 city = address[index];
-                age = 18;
+                age = 18 + new Random().nextInt();
             }
 
             if (i == 0 || i == 3 || i == 5 || i == 8) {
