@@ -25,6 +25,7 @@ public class ValidParentheses {
         result = ValidParentheses.isValid(example4);
         System.out.println(result);
     }
+
     public static boolean isValid(String s) {
 
         if (s.isEmpty()) {
@@ -34,14 +35,14 @@ public class ValidParentheses {
         Stack<Character> stack = new Stack<>();
 
         for (char symbol : s.toCharArray()) {
-            if ( symbol == '(' || symbol == '{' || symbol == '[') {
+            if (symbol == '(' || symbol == '{' || symbol == '[') {
                 stack.push(symbol);
             } else if (symbol == ')' || symbol == '}' || symbol == ']') {
                 if (stack.isEmpty()) {
                     return false;
                 }
 
-                Character openElement =  stack.pop();
+                Character openElement = stack.pop();
                 //Check if it's  correct pairs of parentheses.
                 if (openElement == '(' && symbol != ')') {
                     return false;

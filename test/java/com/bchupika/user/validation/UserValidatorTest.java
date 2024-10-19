@@ -1,7 +1,6 @@
 package com.bchupika.user.validation;
 
 import com.bchupika.user.dto.UserRegistrationDto;
-import com.bchupika.user.exception.DataProcessingException;
 import com.bchupika.user.exception.EmailException;
 import com.bchupika.user.exception.PasswordNotEqual;
 import com.bchupika.user.exception.PhoneNumberException;
