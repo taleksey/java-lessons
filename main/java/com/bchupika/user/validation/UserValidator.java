@@ -4,8 +4,6 @@ import com.bchupika.user.dto.UserRegistrationDto;
 import com.bchupika.user.exception.EmailException;
 import com.bchupika.user.exception.PasswordNotEqual;
 import com.bchupika.user.exception.PhoneNumberException;
-import org.junit.jupiter.api.extension.ExtendWith;
-import org.mockito.junit.jupiter.MockitoExtension;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;

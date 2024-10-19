@@ -67,9 +67,7 @@ class UserServiceImplTest {
         doThrow(dataProcessingException).when(userRepository).save(user);
         doNothing().when(userValidator).isValid(user);
 
-        DataProcessingException exception = assertThrows(DataProcessingException.class, () -> {
-            userService.registerUser(user);
-        });
+        DataProcessingException exception = assertThrows(DataProcessingException.class, () -> userService.registerUser(user));
         assertEquals("Can't create instance of user", exception.getMessage());
 
         verify(userValidator).isValid(user);
@@ -85,7 +83,6 @@ class UserServiceImplTest {
         String email = "test@test.com";
         String password = "test";
         String phoneNumber = "123456789";
-        UserRegistrationDto user = new UserRegistrationDto(name, lastName, email, phoneNumber, password, password);
         when(userRepository.getUserById(id)).thenReturn(Optional.of(new User(id, name, lastName, email, phoneNumber, password)));
         UserResponseDto userResponseDto = userService.getUserById(id);
 

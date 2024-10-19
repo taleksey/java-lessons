@@ -37,9 +37,7 @@ class UserValidatorTest {
     void wrongEmail() {
         UserRegistrationDto userDto = new UserRegistrationDto(userName, lastName, "email", phoneNumber, password, repeatPassword);
 
-        EmailException exception = assertThrows(EmailException.class, () -> {
-            userValidator.isValid(userDto);
-        });
+        EmailException exception = assertThrows(EmailException.class, () -> userValidator.isValid(userDto));
 
         assertEquals("Email is not correct", exception.getMessage());
     }
@@ -48,9 +46,7 @@ class UserValidatorTest {
     void wrongPhone() {
         UserRegistrationDto userDto = new UserRegistrationDto(userName, lastName, email, "dsadasda", password, repeatPassword);
 
-        PhoneNumberException exception = assertThrows(PhoneNumberException.class, () -> {
-            userValidator.isValid(userDto);
-        });
+        PhoneNumberException exception = assertThrows(PhoneNumberException.class, () -> userValidator.isValid(userDto));
 
         assertEquals("Phone number is not correct", exception.getMessage());
     }
@@ -59,9 +55,7 @@ class UserValidatorTest {
     void passwordAreNotTheSame() {
         UserRegistrationDto userDto = new UserRegistrationDto(userName, lastName, email, phoneNumber, password, "repeatPassword");
 
-        PasswordNotEqual exception = assertThrows(PasswordNotEqual.class, () -> {
-            userValidator.isValid(userDto);
-        });
+        PasswordNotEqual exception = assertThrows(PasswordNotEqual.class, () -> userValidator.isValid(userDto));
 
         assertEquals("Password does not match", exception.getMessage());
     }
