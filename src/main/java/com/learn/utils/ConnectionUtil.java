@@ -5,6 +5,7 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.Properties;
 
+@SuppressWarnings("checkstyle:HideUtilityClassConstructor")
 public class ConnectionUtil {
     private static final String DB_URL = "jdbc:mysql://localhost:3306/java_lessons";
     private static final String DRIVER_URL = "com.mysql.cj.jdbc.Driver";
@@ -28,5 +29,4 @@ public class ConnectionUtil {
         // Ensure the driver class is loaded
         return DriverManager.getConnection(DB_URL, DB_PROPERTIES);
     }
-
 }

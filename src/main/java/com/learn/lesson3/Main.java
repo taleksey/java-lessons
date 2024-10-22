@@ -5,7 +5,9 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.Random;
 
+@SuppressWarnings("checkstyle:HideUtilityClassConstructor")
 public class Main {
+    @SuppressWarnings("checkstyle:MagicNumber")
     public static void main(String[] args) {
         List<Student> students = generateStudents();
         List<StudentGradeRecord> studentGradeRecord = students.stream()
@@ -23,6 +25,7 @@ public class Main {
                 .forEach(System.out::println);
     }
 
+    @SuppressWarnings("checkstyle:MagicNumber")
     public static List<Student> generateStudents() {
         List<Student> students = new ArrayList<>();
 

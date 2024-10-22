@@ -13,6 +13,7 @@ import java.util.Optional;
 import java.sql.SQLException;
 
 public class UserRepositoryImpl implements UserRepository {
+    @SuppressWarnings("checkstyle:MagicNumber")
     public User save(UserRegistrationDto user) throws DataProcessingException {
         String sqlRequest = "INSERT INTO user (name, last_name, email, phone, password) VALUES (?, ?, ?, ?, ?)";
         try (Connection connection = ConnectionUtil.getConnection();

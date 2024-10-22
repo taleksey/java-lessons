@@ -10,7 +10,9 @@ import com.learn.liquibase.database.repositore.RoleRepository;
 import java.util.Arrays;
 import java.util.List;
 
+@SuppressWarnings("checkstyle:HideUtilityClassConstructor")
 public class Main {
+    @SuppressWarnings("checkstyle:MagicNumber")
     public static void main(String[] args) {
         RoleRepository roleRepository = new RoleRepositoryImpl();
         UserRepositoryImpl userRepository = new UserRepositoryImpl();
