@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 @SuppressWarnings("checkstyle:HideUtilityClassConstructor")
 public class MoveZero {
+    @SuppressWarnings("checkstyle:MagicNumber")
     public static void main(String[] args) {
         System.out.println();
         int[] nums = {0, 1, 0, 3, 12};
