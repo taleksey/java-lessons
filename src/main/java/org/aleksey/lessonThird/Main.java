@@ -25,6 +25,7 @@ public class Main {
                 .forEach(System.out::println);
     }
 
+    @SuppressWarnings("checkstyle:MagicNumber")
     public static List<Student> generateStudents() {
         List<Student> students = new ArrayList<>();
 

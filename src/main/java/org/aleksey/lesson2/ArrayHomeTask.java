@@ -6,6 +6,7 @@ import java.util.LinkedList;
 
 @SuppressWarnings("checkstyle:HideUtilityClassConstructor")
 public class ArrayHomeTask {
+    @SuppressWarnings("checkstyle:MagicNumber")
     public static void main(String[] args) {
         LinkedList<Integer> firstList = new LinkedList<>(Arrays.asList(1, 2, 3, 4, 5));
         revereSort(firstList);
