@@ -1,4 +1,4 @@
-package lesson3;
+package com.bchupika.lesson3;
 
 import java.util.ArrayList;
 import java.util.Comparator;

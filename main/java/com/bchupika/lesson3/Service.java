@@ -1,6 +1,7 @@
-package lesson3;
+package com.bchupika.lesson3;
 
 public class Service {
+    @SuppressWarnings("checkstyle:OperatorWrap")
     public static String toString(StudentGradeRecord studentGradeRecord) {
         return "StudentGradeRecord{" +
                 "studentName='" + studentGradeRecord.studentName() + '\'' +
