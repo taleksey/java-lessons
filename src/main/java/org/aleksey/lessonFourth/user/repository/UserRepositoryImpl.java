@@ -5,10 +5,14 @@ import org.aleksey.lessonFourth.user.entity.User;
 import org.aleksey.lessonFourth.user.exception.DataProcessingException;
 import org.aleksey.utils.ConnectionUtil;
 
-import java.sql.*;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.Optional;
 
-public class UserRepositoryImpl {
+public class UserRepositoryImpl implements UserRepository {
     @SuppressWarnings("checkstyle:MagicNumber")
     public User save(UserRegistrationDto user) throws DataProcessingException {
         String sqlRequest = "INSERT INTO user (name, last_name, email, phone, password) VALUES (?, ?, ?, ?, ?)";

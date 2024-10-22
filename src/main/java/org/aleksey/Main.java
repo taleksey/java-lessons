@@ -6,6 +6,7 @@ import org.aleksey.lessonFourth.user.repository.UserRepositoryImpl;
 import org.aleksey.lessonFourth.user.service.UserServiceImpl;
 import org.aleksey.lessonFourth.user.validation.UserValidator;
 
+@SuppressWarnings("checkstyle:HideUtilityClassConstructor")
 public class Main {
     public static void main(String[] args) {
         UserRepositoryImpl userRepository = new UserRepositoryImpl();
