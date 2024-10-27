@@ -60,7 +60,9 @@ public class Main {
 
         List<User> users = userRepository.findAll();
         User firstUser = users.getFirst();
-        userRepository.findById(firstUser.getId()).ifPresentOrElse(System.out::println, () -> System.out.println("No user found"));
+        userRepository.findById(firstUser.getId()).ifPresentOrElse((findUser) -> {
+            System.out.println("Value is present, its: " + findUser + " Roles " + findUser.getRoles());
+        }, () -> System.out.println("No user found"));
 
         System.out.println("\nFind user by non-existing ID:");
         userRepository.findById(100L).ifPresentOrElse(System.out::println, () -> System.out.println("No user found"));

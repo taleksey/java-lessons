@@ -81,7 +81,6 @@ public class User {
         return "User{" + "id=" + id
                 + ", username='" + username + '\''
                 + ", phoneNumber='" + phoneNumber + '\''
-                + ", email='" + email + '\''
-                + ", roles=" + roles + '}';
+                + ", email='" + email + '}';
     }
 }

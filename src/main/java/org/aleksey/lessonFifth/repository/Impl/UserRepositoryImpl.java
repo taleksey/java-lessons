@@ -25,13 +25,17 @@ public class UserRepositoryImpl implements UserRepository {
 
     @Override
     public Optional<User> findById(Long id) {
-        return Optional.ofNullable(sessionFactory.openSession().find(User.class, id));
+        try (Session session = sessionFactory.openSession()) {
+            return Optional.ofNullable(session.find(User.class, id));
+        }
     }
 
     @Override
     public List<User> findAll() {
-        return sessionFactory.openSession()
-                .createQuery("select u from User u", User.class)
-                .getResultList();
+        try (Session session = sessionFactory.openSession()) {
+            return session
+                    .createQuery("select u from User u", User.class)
+                    .getResultList();
+        }
     }
 }
